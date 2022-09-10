@@ -1,7 +1,5 @@
 # https://www.acmicpc.net/problem/1652
 
-# 답은 계속 도출되는데 왜 백준 사이트에서는 런타임에러(NameError) 뜨지?
-
 import sys
 sys.stdin = open("1652.txt")
 
