@@ -3,7 +3,7 @@
 # 답은 계속 도출되는데 왜 백준 사이트에서는 런타임에러(NameError) 뜨지?
 
 import sys
-# sys.stdin = open("1652.txt")
+sys.stdin = open("1652.txt")
 
 '''
 5
@@ -16,26 +16,36 @@ X....
 '''
 
 # 첫째 줄에 방의 크기 N이 주어진다.
-N = int(sys.stdin.readline())
+n = int(input())
 
 matrix = []
-for _ in range(N):
-    matrix.append(list(sys.stdin.readline()))
+r, c = 0, 0
+cnt = 0
 
-# row_cnt 세기
-row_cnt = 0
-for i in range(N):
-    for j in range(len(matrix)):
-        if matrix[i][j] == '.' and matrix[i][j+1] == '.':
-            row_cnt += 1
-            break
+# input 받기
+for _ in range(n):
+    matrix.append(list(input()))
 
-#col_cnt 세기
-col_cnt = 0
-for c in range(len(matrix)):
-    for r in range(0, N-1):
-        if matrix[r][c] == '.' and matrix[r+1][c] == '.':
-            col_cnt += 1
-            break
+# 가로 누울 자리 세기
+for i in range(n):
+    cnt = 0
+    for j in range(n):
+        if matrix[i][j] == ".":
+            cnt += 1
+        else:
+            cnt = 0
+        if cnt == 2:
+            r += 1
 
-print(row_cnt, col_cnt)
+# 세로 누울 자리 세기
+for i in range(n):
+    cnt = 0
+    for j in range(n):
+        if matrix[j][i] == ".":
+            cnt += 1
+        else:
+            cnt = 0
+        if cnt == 2:
+            c += 1
+
+print(r, c)
