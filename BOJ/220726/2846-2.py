@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/2846
 
-# 백준 2846 다시풀기
+# 2846.py 가 컴파일에러여서 다시 풀이
 
 import sys
 sys.stdin = open("2846.txt")
