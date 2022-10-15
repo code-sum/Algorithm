@@ -5,8 +5,8 @@ sys.stdin = open("17609.txt")
 
 '''
 input_ 리스트가
-회문(return 2), 유사회문(return 1), 
-혹은 둘다 아닌지(return 0) ver 함수로 검증
+회문(return 0), 유사회문(return 1), 
+혹은 둘다 아닌지(return 2) ver 함수로 검증
 '''
 
 def ver(input_, cnt):
