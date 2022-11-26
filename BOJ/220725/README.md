@@ -39,3 +39,20 @@ for i in range(1, n+1):
 
 print(cnt)
 ```
+
+
+
+#### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
+
+> N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
+
+```python
+n = int(input())
+
+numbers = list(map(int, input().split()))
+
+print(f'{min(numbers)} {max(numbers)}')
+```
+
+
+
