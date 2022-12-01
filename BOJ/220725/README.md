@@ -83,6 +83,23 @@ print(cnt)
 
 
 
+#### 1330. 두 수 비교하기 [(link)](https://www.acmicpc.net/problem/1330)
+
+> 두 정수 A와 B가 주어졌을 때, A와 B를 비교하는 프로그램을 작성하시오.
+
+```python
+A, B = map(int, input().split())
+
+if A > B:
+    print('>')
+elif A < B:
+    print('<')
+else:
+    print('==')
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
