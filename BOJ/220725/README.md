@@ -100,6 +100,24 @@ else:
 
 
 
+#### 2438. 별 찍기 - 1 [(link)](https://www.acmicpc.net/problem/2438)
+
+> 첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
+
+```python
+# 첫째줄에 n이 주어짐
+n = int(input())
+
+result = ''
+
+for i in range(n):
+    result += "*"
+
+    print(result)
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
