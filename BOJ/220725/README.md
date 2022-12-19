@@ -162,6 +162,19 @@ else:
 
 
 
+#### 2558. A+B - 2 [(link)](https://www.acmicpc.net/problem/2558)
+
+> 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+
+```python
+A = int(input())
+B = int(input())
+
+print( A+B )
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
