@@ -175,6 +175,32 @@ print( A+B )
 
 
 
+#### 2577. 숫자의 개수 [(link)](https://www.acmicpc.net/problem/2577)
+
+> 세 개의 자연수 A, B, C가 주어질 때 A × B × C를 계산한 결과에 0부터 9까지 각각의 숫자가 몇 번씩 쓰였는지를 구하는 프로그램을 작성하시오.
+>
+> 예를 들어 A = 150, B = 266, C = 427 이라면 A × B × C = 150 × 266 × 427 = 17037300 이 되고, 계산한 결과 17037300 에는 0이 3번, 1이 1번, 3이 2번, 7이 2번 쓰였다.
+
+```python
+A = int(input())
+B = int(input())
+C = int(input())
+
+result = A*B*C
+count = [0]*10    # 0부터 9까지 숫자의 등장 횟수를 의미하는 리스트
+
+while True:
+    count[result % 10] += 1   # A*B*C의 1의 자리 확인, 이걸 리스트의 인덱스로 1씩 증가
+    result //= 10             # 1의 자릿수 다시 확인
+    if result == 0:           # result == 0 일때 반복문 종료
+        break
+
+for i in range(10):
+    print(count[i])            # count[] 가 가진 인덱스 값 출력
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
