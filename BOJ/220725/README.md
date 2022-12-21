@@ -201,6 +201,21 @@ for i in range(10):
 
 
 
+#### 2739. 구구단 [(link)](https://www.acmicpc.net/problem/2739)
+
+> N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오. 출력 형식에 맞춰서 출력하면 된다.
+
+```python
+N = int(input())
+
+for i in range(1, 10):
+    result = N*i
+    
+    print(f'{N} * {i} = {result}')
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
