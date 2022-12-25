@@ -229,6 +229,19 @@ for i in range(1, N+1):
 
 
 
+#### 2742. 기찍 N [(link)](https://www.acmicpc.net/problem/2742)
+
+> 자연수 N이 주어졌을 때, N부터 1까지 한 줄에 하나씩 출력하는 프로그램을 작성하시오.
+
+```python
+N = int(input())
+
+for i in range(1, N+1):
+    print(N+1-i)
+```
+
+
+
 #### 10818. 최소, 최대 [(link)](https://www.acmicpc.net/problem/10818)
 
 > N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
