@@ -358,3 +358,28 @@ numbers = list(map(int, input().split()))
 
 print(f'{min(numbers)} {max(numbers)}')
 ```
+
+
+
+#### 10871. X보다 작은 수 [(link)](https://www.acmicpc.net/problem/10871)
+
+> 정수 N개로 이루어진 수열 A와 정수 X가 주어진다. 이때, A에서 X보다 작은 수를 모두 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("10871.txt")
+
+N, X = map(int, input().split())
+A = list(map(int, input().split()))
+
+# A에서 X보다 작은 수를 입력받은 순서대로 공백 구분해 출력
+new_A = []
+for i in A:
+    if i < X:
+        new_A.append(i)
+    else:
+        continue
+
+print(*new_A, end=' ')
+```
+
