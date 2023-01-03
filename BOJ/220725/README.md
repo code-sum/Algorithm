@@ -415,3 +415,22 @@ for _ in range(test_case):  # 5이전까지, 0, 1, 2, 3, 4번째 연산에 대�
     print( a+b )
 ```
 
+
+
+#### 10995. 별 찍기 - 20 [(link)](https://www.acmicpc.net/problem/10995)
+
+> 예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.
+
+```python
+n = int(input())
+
+if n == 1:
+    print('*')
+
+else:
+    for i in range(n):
+        if i % 2 == 0:
+            print('* '*n)
+        else:
+            print(' *'*n)
+```
