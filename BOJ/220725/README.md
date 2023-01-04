@@ -434,3 +434,21 @@ else:
         else:
             print(' *'*n)
 ```
+
+
+
+#### 11021. A+B - 7 [(link)](https://www.acmicpc.net/problem/11021)
+
+> 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("11021_input.txt", "r")
+
+test_case = int(input())    # 맨 첫줄에 테스트 케이스 개수(5)가 주어진다
+
+for _ in range(test_case):
+    a, b = map(int, input().split())
+    print(f'Case #{_+1}: {a+b}')
+```
+
