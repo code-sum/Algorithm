@@ -452,3 +452,19 @@ for _ in range(test_case):
     print(f'Case #{_+1}: {a+b}')
 ```
 
+
+
+#### 11022. A+B - 8 [(link)](https://www.acmicpc.net/problem/11022)
+
+> 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("11022_input.txt", "r")
+
+test_case = int(input())
+for _ in range(1, test_case + 1):
+    a, b = map(int, input().split())
+    print('Case #%d: %d + %d = %d' %(_, a, b, a+b))
+```
+

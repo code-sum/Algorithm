@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/11022
+
 import sys
 sys.stdin = open("11022_input.txt", "r")
 
