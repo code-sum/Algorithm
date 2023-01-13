@@ -104,3 +104,31 @@ if a_cnt == b_cnt:
                 print("B"); break
 ```
 
+
+
+#### 2711. 오타맨 고창영 [(link)](https://www.acmicpc.net/problem/2711)
+
+> 고창영은 맨날 오타를 낸다. 창영이가 오타를 낸 문장과 오타를 낸 위치가 주어졌을 때, 오타를 지운 문자열을 출력하는 프로그램을 작성하시오.
+>
+> 창영이는 오타를 반드시 1개만 낸다.
+
+```python
+import sys
+sys.stdin = open("2711.txt")
+
+t = int(input())
+
+for i in range(1, t+1):
+    tc = list(input().split())
+    # print(*tc)
+
+    spot = int(tc[0])-1
+    word = list(tc[1])
+    
+    for j in range(len(word)):
+        if j == spot:
+            del word[j]
+    
+    print(*word, sep='')
+```
+
