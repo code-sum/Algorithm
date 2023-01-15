@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/2851
+
 # 먹은 버섯 리스트
 eaten = []
 
