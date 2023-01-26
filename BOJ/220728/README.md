@@ -73,3 +73,21 @@ for input_, num in list_.items():
 print(sorted(ans)[0])
 ```
 
+
+
+#### 1357. 뒤집힌 덧셈 [(link)](https://www.acmicpc.net/problem/1357)
+
+> 어떤 수 X가 주어졌을 때, X의 모든 자리수가 역순이 된 수를 얻을 수 있다. Rev(X)를 X의 모든 자리수를 역순으로 만드는 함수라고 하자. 예를 들어, X=123일 때, Rev(X) = 321이다. 그리고, X=100일 때, Rev(X) = 1이다.
+>
+> 두 양의 정수 X와 Y가 주어졌을 때, Rev(Rev(X) + Rev(Y))를 구하는 프로그램을 작성하시오
+
+```python
+# 첫번째 뒤집기를 쉽게 하기 위해 str으로 형 변환
+X, Y = map(str, input().split())
+
+# 뒤집기한 X, Y 를 int로 형 변환해서 더해줌 => 이후 str 으로 형 변환해서 뒤집기 한번 더 할 준비
+tem = str(int(X[::-1]) + int(Y[::-1]))
+
+print(tem[::-1])
+```
+
