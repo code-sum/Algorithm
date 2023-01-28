@@ -131,3 +131,29 @@ for i in sorted(ans):
     print(i)
 ```
 
+
+
+#### 3052. 나머지 [(link)](https://www.acmicpc.net/problem/3052)
+
+> 두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다. 
+>
+> 수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("3052.txt")
+
+# 입력된 수를 42로 나눈 나머지 담아줄 리스트 생성
+arr = []
+
+for i in range(10):
+    input_10 = int(input())
+    arr.append(input_10 % 42)
+
+# 리스트를 set 으로 바꾸어 중복 제거
+remainder = set(arr)
+
+# 서로 다른(=중복되지 않은) 나머지들이 몇 개 있나요?
+print(len(remainder))
+```
+
