@@ -249,3 +249,26 @@ for i in ans:
     print(i)
 ```
 
+
+
+#### 10816. 숫자 카드 2 [(link)](https://www.acmicpc.net/problem/10816)
+
+> 숫자 카드는 정수 하나가 적혀져 있는 카드이다. 상근이는 숫자 카드 N개를 가지고 있다. 정수 M개가 주어졌을 때, 이 수가 적혀있는 숫자 카드를 상근이가 몇 개 가지고 있는지 구하는 프로그램을 작성하시오.
+
+```python
+from sys import stdin
+from collections import Counter
+
+n = stdin.readline()
+n_cards = stdin.readline().split()
+m = stdin.readline()
+m_cards = stdin.readline().split()
+
+# 리스트 n_cards 을 Counter에 넣으면 
+# N의 요소들의 숫자를 센 Dictionary자료형이 출력
+C = Counter(n_cards)
+
+# Counter(n_cards)에 M의 요소가 있다면 해당 숫자를 출력하고 없으면 0을 출력
+print(' '.join(f'{C[m]}' if m in C else '0' for m in m_cards))
+```
+
