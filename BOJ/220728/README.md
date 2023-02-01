@@ -272,3 +272,30 @@ C = Counter(n_cards)
 print(' '.join(f'{C[m]}' if m in C else '0' for m in m_cards))
 ```
 
+
+
+#### 11652. 카드 [(link)](https://www.acmicpc.net/problem/11652)
+
+> 준규는 숫자 카드 N장을 가지고 있다. 숫자 카드에는 정수가 하나 적혀있는데, 적혀있는 수는 -262보다 크거나 같고, 262보다 작거나 같다.
+>
+> 준규가 가지고 있는 카드가 주어졌을 때, 가장 많이 가지고 있는 정수를 구하는 프로그램을 작성하시오. 만약, 가장 많이 가지고 있는 정수가 여러 가지라면, 작은 것을 출력한다.
+
+```python
+import sys
+sys.stdin = open("11652.txt")
+
+dic = {}
+n = int(input())
+
+for _ in range(n):
+    num = int(input())
+
+    if num not in dic:
+        dic[num] = 1
+    else:
+        dic[num] += 1
+
+dic = sorted(dic.items(), key=lambda x: (-x[1], x[0]))
+print(dic[0][0])
+```
+
