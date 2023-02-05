@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/2161
+
 # 덱 활용하기
 from collections import deque
 
