@@ -118,3 +118,58 @@ for i in name:
 print(short_name)
 ```
 
+
+
+#### 9012. 괄호 [(link)](https://www.acmicpc.net/problem/9012)
+
+> 괄호 문자열(Parenthesis String, PS)은 두 개의 괄호 기호인 ‘(’ 와 ‘)’ 만으로 구성되어 있는 문자열이다. 그 중에서 괄호의 모양이 바르게 구성된 문자열을 올바른 괄호 문자열(Valid PS, VPS)이라고 부른다. 한 쌍의 괄호 기호로 된 “( )” 문자열은 기본 VPS 이라고 부른다. 만일 x 가 VPS 라면 이것을 하나의 괄호에 넣은 새로운 문자열 “(x)”도 VPS 가 된다. 그리고 두 VPS x 와 y를 접합(concatenation)시킨 새로운 문자열 xy도 VPS 가 된다. 예를 들어 “(())()”와 “((()))” 는 VPS 이지만 “(()(”, “(())()))” , 그리고 “(()” 는 모두 VPS 가 아닌 문자열이다. 
+>
+> 여러분은 입력으로 주어진 괄호 문자열이 VPS 인지 아닌지를 판단해서 그 결과를 YES 와 NO 로 나타내어야 한다. 
+
+```python
+import sys
+sys.stdin = open("9012_input.txt")
+
+# 테스트 케이스의 수
+tc = int(input())
+
+for i in range(tc):
+
+    # '(' 와 ')' 로 이루어진 자료 input
+    input_bracket = input()
+
+    # '(' + ')' 모양이 완성되었을 때 이를 담아줄 리스트 생성
+    done = []
+
+    for j in input_bracket:
+
+        # 괄호 열기'(' 는 done 에 일단 넣어줌
+        if j == "(":
+            done.append(j)
+
+        # 괄호 닫기')' 는 done 을 검사
+        elif j == ")":
+
+            # 검사결과 done 이 비어있지 않으면 pop
+            # 괄호열기 + 괄호닫기 완성의 결과가 pop 이므로
+            if done:
+                done.pop()
+
+            # 검사결과 done 이 빈 상태면 "NO" 출력
+            else:
+                print("NO")
+                break
+    
+    # 위의 for 문에서 break 발생한 적이 없으면?
+    else:
+        
+        # 반복문 연산 결과 done 이 최종적으로 비어있는 상태라면
+        # 짝이 모두 맞아 떨어져서 pop 된 상태기 때문에 "YES" 프린트
+        if not done:
+            print("YES")
+
+        # done 안에 여전히 뭔가가 남아있으면 짝이 맞지 않으니 "NO" 프린트
+        else:
+            print("NO")
+```
+
