@@ -295,3 +295,95 @@ else:
     print('힝구')
 ```
 
+
+
+#### 23253. 자료구조는 정말 최고야 [(link)](https://www.acmicpc.net/problem/23253)
+
+> 찬우는 스택을 배운 뒤 자료구조 과목과 사랑에 빠지고 말았다.
+>
+> 자료구조 과목만을 바라보기로 다짐한 찬우는 나머지 과목의 교과서 N권을 방 구석에 M개의 더미로 아무렇게나 쌓아 두었다. 하지만 중간고사가 다가오자 더 이상 자료구조만 공부할 수는 없었고, 결국 찬우는 팽개쳤던 나머지 과목의 교과서를 정리하고 번호순으로 나열하려 한다.
+>
+> N권의 교과서는 각각 1부터 N까지의 번호가 매겨져 있다. 찬우는 각 더미의 맨 위에 있는 교과서만 꺼낼 수 있으며, 반드시 교과서를 꺼낸 순서대로 나열해야 하기 때문에 번호순으로 나열하기 위해서는 1번, 2번, … N - 1번, N번 교과서 순으로 꺼내야 한다. 교과서를 올바르게 나열할 수 없다면 중간고사 공부를 때려치겠다는 찬우를 위해 번호순으로 나열할 수 있는지 여부를 알려주는 프로그램을 작성해 주자.
+
+```python
+# 풀이1 (시간초과ㅠㅠ)
+
+import sys
+sys.stdin = open("23253_input.txt")
+
+# 1번째 입력: 책 권수(N), 책 더미수(M)
+N, M = map(int, input().split())
+
+# 이 책들을 정리할 수 있나요?
+OX = True
+
+for i in range(M):
+
+    # 2번째, 4번째, 6번째 ... 입력: 1번째, 2번째, 3번째 ... 더미에 포함된 책 권수
+    int(input())
+
+    # 1번째, 2번째, 3번째 ... 더미에 들어있는 책들의 번호 나열
+    dummy = list(map(int, input().split()))
+
+    # 만약에 dummy가 순서대로 sorted 되어 있지 않으면, OX = False 하고 연산 break
+    if dummy != sorted(dummy, reverse = True):
+        OX = False
+        break
+
+if OX: 
+    print('Yes')
+else:
+    print('No')
+```
+
+```python
+# 풀이2
+
+N, M = list(map(int, input().split()))
+cnt = 0
+for i in range(M):
+    book = int(input())
+    book_numbers = list(map(int, input().split()))
+    for j in range(book-1): # 책이 2권일 경우 1번만 확인하면 됨. 3번일 경우 2번
+        if book_numbers[j] < book_numbers[j+1]: # 첫번째 번호가 두번째 보다 커야하는데, 작을 경우
+            cnt += 1
+print('Yes' if cnt == 0 else 'No')
+```
+
+```python
+# 풀이3
+
+import sys
+sys.stdin = open("23253.txt")
+
+# 교과서 n권, 책 더미 m개
+n, m = map(int, input().split())
+
+cnt = 0
+
+for i in range(m):
+
+    # 각 더미에 쌓인 책 권수(d), 쌓인 책 순서(order) 개행으로 입력 
+    d = int(input())
+    order = list(map(int, input().split()))
+    
+    for j in range(d-1):
+        if order[j] < order[j+1]:
+            cnt += 1
+
+if cnt == 0:
+    print("Yes")
+else:
+    print("No")
+```
+
+```python
+### 시간초과 방지하는 팁 ###
+
+# 1. pypy 써본다
+# 2. 아래 코드를 입력해본다
+
+import sys
+input = sys.stdin.readline
+```
+
