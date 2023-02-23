@@ -136,3 +136,43 @@ max = int(a.replace('5', '6')) + int(b.replace('5', '6'))
 print(min, max)
 ```
 
+
+
+#### 5533. 유니크 [(link)](https://www.acmicpc.net/problem/5533)
+
+> 상근이와 친구들은 MT에 가서 아래 설명과 같이 재미있는 게임을 할 것이다.
+>
+> 각 플레이어는 1이상 100 이하의 정수를 카드에 적어 제출한다. 각 플레이어는 자신과 같은 수를 쓴 사람이 없다면, 자신이 쓴 수와 같은 점수를 얻는다. 만약, 같은 수를 쓴 다른 사람이 있는 경우에는 점수를 얻을 수 없다.
+>
+> 상근이와 친구들은 이 게임을 3번 했다. 각 플레이어가 각각 쓴 수가 주어졌을 때, 3번 게임에서 얻은 총 점수를 구하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("5533.txt")
+
+members = int(input())
+matrix = []
+
+for _ in range(members):
+    matrix.append(list(map(int, input().split())))
+
+for i in range(members):
+    sum = 0
+
+    # 모든 참가자들이 총 3번의 게임을 진행할 때
+    # 서로 동일하지 않은 값들만 찾아서 + 합산하기
+    for j in range(3):
+        score = matrix[i][j]
+        find = 1   # 1, 0을 판별하는 탐색기에 시작값(1 or 0 둘 중 하나) 입력
+        for k in range(members):
+            if k == i:    # matrix[i][0] and matrix[k][0] 상황에서
+                continue  # i = k 면 비교 대상이 안되니까 패스!
+            if matrix[k][j] == score:   # 동일한 값이 발생하면
+                find = 0                # 탐색기값은 0이 됨
+                break                   # 이때 반복문을 멈추고 반복문 밖으로 나감
+        if find == 1:                   # 그게 아니라 find == 1 이라면
+            sum += score                # 동일한 값이 발생한게 아니므로 점수에 합산
+
+    print(sum)
+```
+
