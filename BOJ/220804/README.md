@@ -171,3 +171,23 @@ for blocks in matrix:
 print(cnt)
 ```
 
+
+
+#### 2693. N번째 큰 수 [(link)](https://www.acmicpc.net/problem/2693)
+
+> 배열 A가 주어졌을 때, N번째 큰 값을 출력하는 프로그램을 작성하시오.
+>
+> 배열 A의 크기는 항상 10이고, 자연수만 가지고 있다. N은 항상 3이다.
+
+```python
+import sys
+sys.stdin = open("2693.txt")
+
+t = int(input())
+
+for _ in range(1, t+1):
+    arr = sorted(list(map(int, input().split())), reverse=True)
+    
+    print(arr[2])
+```
+
