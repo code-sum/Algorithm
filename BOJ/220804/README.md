@@ -278,3 +278,26 @@ for i in range(n):
     print()
 ```
 
+
+
+#### 9093. 단어 뒤집기 [(link)](https://www.acmicpc.net/problem/9093)
+
+> 문장이 주어졌을 때, 단어를 모두 뒤집어서 출력하는 프로그램을 작성하시오. 단, 단어의 순서는 바꿀 수 없다. 단어는 영어 알파벳으로만 이루어져 있다.
+
+```python
+import sys
+sys.stdin = open("9093.txt")
+
+t = int(input())
+
+for i in range(1, t+1):
+
+    a = []
+    input_ = list(map(str, input().split()))
+
+    for j in input_:
+        a.append(j[::-1])
+
+    print(*a)
+```
+
