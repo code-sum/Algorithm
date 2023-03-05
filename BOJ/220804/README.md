@@ -301,3 +301,61 @@ for i in range(1, t+1):
     print(*a)
 ```
 
+
+
+#### 9455. 박스 [(link)](https://www.acmicpc.net/problem/9455)
+
+> m행 n열로 이루어진 그리드가 주어진다. 일부 칸에는 박스가 들어 있다. 모든 박스가 더 이상 움직일 수 없을 때 까지 아래로 움직인다면, 박스는 쌓여진 상태가 된다.
+>
+> 그림 (a)의 그리드의 크기는 5행 4열이고, 7칸에는 박스가 들어있다. 모든 박스가 계속해서 아래로 움직이면, 그림 (b)와 같이 변하게 된다.
+>
+> ![img](https://www.acmicpc.net/upload/images/box.png)
+>
+> 박스가 움직인 거리는 바닥에 쌓이기 전 까지 이동한 칸의 개수이다. 예를 들어, 맨 왼쪽 열에서 가장 위에 있는 박스가 움직인 거리는 2이다. 모든 박스가 이동한 거리 (각 박스가 이동한 거리의 합) 을 구하는 프로그램을 작성하시오. 위의 예제에서 박스 7개가 움직인 거리는 8이다.
+
+```python
+import sys
+
+'''
+출력 예시
+8
+6
+16
+'''
+
+# 첫째 줄에 테스트 케이스의 개수 T
+T = int(sys.stdin.readline())
+
+for _ in range(T):
+    # 그 다음줄에는 m, n 입력
+    m, n = map(int, sys.stdin.readline().split())
+
+    # 그 다음줄부터 그리드 입력
+    grid = [[] for _ in range(n)]
+
+    # 각 열에 있는 박스의 위치를 2차원 리스트인 grid 에 저장
+    for i in range(m):
+        line = list(sys.stdin.readline().split())
+        for j in range(n):
+            grid[j].append(line[j])
+
+    move = 0   # 모든 박스가 이동한 거리 cnt
+
+    # 모든 열(n)을 순회하는 반복문 작성
+    for i in range(n):
+
+        # 1열의 박스('1') 개수
+        boxes = grid[i].count('1')
+        end = m - 1   # 바닥의 위치
+
+        # 열의 아래부터 박스 위치 이동
+        for j in range(m - 1, -1, -1):
+
+            # 박스를 제자리에 놓고 바닥을 1씩 높인다.
+            if grid[i][j] == '1':
+                move += end - j
+                end -= 1
+
+    print(move)
+```
+
