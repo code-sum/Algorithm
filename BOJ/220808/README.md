@@ -100,3 +100,52 @@ while True:
 print(cnt)
 ```
 
+
+
+#### 2178. 미로 탐색 [(link)](https://www.acmicpc.net/problem/2178)
+
+> N×M크기의 배열로 표현되는 미로가 있다.
+>
+> | 1    | 0    | 1    | 1    | 1    | 1    |
+> | ---- | ---- | ---- | ---- | ---- | ---- |
+> | 1    | 0    | 1    | 0    | 1    | 0    |
+> | 1    | 0    | 1    | 0    | 1    | 1    |
+> | 1    | 1    | 1    | 0    | 1    | 1    |
+>
+> 미로에서 1은 이동할 수 있는 칸을 나타내고, 0은 이동할 수 없는 칸을 나타낸다. 이러한 미로가 주어졌을 때, (1, 1)에서 출발하여 (N, M)의 위치로 이동할 때 지나야 하는 최소의 칸 수를 구하는 프로그램을 작성하시오. 한 칸에서 다른 칸으로 이동할 때, 서로 인접한 칸으로만 이동할 수 있다.
+>
+> 위의 예에서는 15칸을 지나야 (N, M)의 위치로 이동할 수 있다. 칸을 셀 때에는 시작 위치와 도착 위치도 포함한다.
+
+```python
+from collections import deque
+import sys
+
+sys.stdin = open("2178.txt")
+
+n, m = map(int, input().split())
+matrix = [list(map(int, list(input()))) for _ in range(n)]
+
+visit = [[False] * m for _ in range(n)]
+dist = [[0] * m for _ in range(n)]  # 거리 +1 씩, 마지막에 출력할 매트릭스
+queue = deque()
+queue.append((0, 0))  # 시작점
+dist[0][0] = 1  # 시작점 거리는 1
+
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+
+while queue:
+    x, y = queue.popleft()
+    for i in range(4):
+        nx, ny = x + dx[i], y + dy[i]
+        if 0 <= nx < n and 0 <= ny < m:  # 그래프 벗어나지 않도록 범위 설정
+            if (
+                visit[nx][ny] == False and matrix[nx][ny] == 1
+            ):  # 방문노드가 아니고, matrix에 1이 있는위치면 위치 변경
+                queue.append((nx, ny))
+                dist[nx][ny] += dist[x][y] + 1  # dist에서 x, y는 1이므로, +1 늘려줌 (2)
+                visit[nx][ny] = True  # 방문처리
+
+print(dist[n - 1][m - 1])  # n, m 은 갯수이므로 행렬에서는 -1씩
+```
+
