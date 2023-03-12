@@ -184,3 +184,113 @@ for i in itertools.combinations(heights, 7):
         break
 ```
 
+
+
+#### 2615. 오목 [(link)](https://www.acmicpc.net/problem/2615)
+
+> 오목은 바둑판에 검은 바둑알과 흰 바둑알을 교대로 놓아서 겨루는 게임이다. 바둑판에는 19개의 가로줄과 19개의 세로줄이 그려져 있는데 가로줄은 위에서부터 아래로 1번, 2번, ... ,19번의 번호가 붙고 세로줄은 왼쪽에서부터 오른쪽으로 1번, 2번, ... 19번의 번호가 붙는다.
+>
+> ![img](https://upload.acmicpc.net/42c87203-247a-49d1-bc63-44397a7184db/-/preview/)
+>
+> 위의 그림에서와 같이 같은 색의 바둑알이 연속적으로 다섯 알을 놓이면 그 색이 이기게 된다. 여기서 연속적이란 가로, 세로 또는 대각선 방향 모두를 뜻한다. 즉, 위의 그림은 검은색이 이긴 경우이다. 하지만 여섯 알 이상이 연속적으로 놓인 경우에는 이긴 것이 아니다.
+>
+> 입력으로 바둑판의 어떤 상태가 주어졌을 때, 검은색이 이겼는지, 흰색이 이겼는지 또는 아직 승부가 결정되지 않았는지를 판단하는 프로그램을 작성하시오. 단, 검은색과 흰색이 동시에 이기거나 검은색 또는 흰색이 두 군데 이상에서 동시에 이기는 경우는 입력으로 들어오지 않는다.
+
+```python
+from pprint import pprint
+import sys
+
+sys.stdin = open("2615.txt")
+
+# 상 -> y -= 1
+# 하 -> y += 1
+
+# 우 하 우상 우하
+dy = [0, 1, -1, 1]
+dx = [1, 0, 1, 1]
+BLACK = 1
+WHITE = 2
+N = 19
+
+board = []
+
+# 오목판 상황 입력
+for _ in range(N):
+    # 하나의 행을 입력
+    temp_list = list(map(int, input().split()))
+    board.append(temp_list)
+
+# 무승부가 발생했을 때 출력하기 위한 값
+ans = 0
+
+# 이중 반복문
+for y in range(N):
+    for x in range(N):
+
+        # 검은색돌이나 흰색돌일때만 델타 탐색을 수행
+        if board[y][x] == 1 or board[y][x] == 2:
+
+            # 델타 탐색
+            for d in range(4):
+                # 방향이 바뀔 때마다 동일한 색의 돌의 개수 초기화(1)
+                stone_count = 1
+
+                # 다음 좌표 탐색
+                ny = y + dy[d]
+                nx = x + dx[d]
+
+                while True:
+                    # 인덱스 조건, 범위를 벗어나면 탈출
+                    if not (-1 < ny < N and -1 < nx < N):
+                        break
+
+                    # 같은 색(값) 돌인지 확인하는 조건, 다른 색 돌이면 탈출
+                    if board[y][x] != board[ny][nx]:
+                        break
+
+                    # 같은 값이고 범위를 벗어나지 않으면 같은 색 돌의 수 + 1
+                    stone_count += 1
+
+                    # 같은 방향 다음 좌표를 탐색
+                    ny = ny + dy[d]
+                    nx = nx + dx[d]
+
+                # 돌의 개수가 5개라면
+                if stone_count == 5:
+
+                    # 이전 좌표
+                    # 기준 좌표(y, x) 에서 델타 값을 마이너스
+                    prev_y = y - dy[d]
+                    prev_x = x - dx[d]
+
+                    # 육목인지 판단
+                    # 조건 1. 이전좌표가 범위를 벗어나면 오목
+                    # if not(-1 < prev_y < N and -1 < prev_x < N):
+
+                    # 조건 2. 기준 좌표의 값과 이전 좌표의 값이 다르면 오목
+                    # if board[y][x] != board[prev_y][prev_x]:
+
+                    # 조건 1과 조건2를 만족하면 오목이 완성
+                    if (
+                        not (-1 < prev_y < N and -1 < prev_x < N)
+                        or board[y][x] != board[prev_y][prev_x]
+                    ):
+                        # 현재 돌의 색 출력
+                        print(board[y][x])
+
+                        # 현재 돌의 좌표를 출력
+                        print(y + 1, x + 1)
+
+                        # ans 값 갱신
+                        # 승패가 결정났기 때문에 ans 값 출력 X
+                        ans = board[y][x]
+
+                        # 실제 코딩테스트에서 사용이 불가능한 방법
+                        # exit(0)
+
+
+# 전체를 반복했는데 무승부일 때 0 출력
+if ans == 0:
+    print(ans)
+```
+
