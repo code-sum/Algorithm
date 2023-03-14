@@ -360,3 +360,41 @@ R2 = 2*S - R1
 print(R2)
 ```
 
+
+
+#### 5800. 성적 통계 [(link)](https://www.acmicpc.net/problem/5800)
+
+> 한상덕은 이번에 중덕 고등학교에 새로 부임한 교장 선생님이다. 교장 선생님으로서 첫 번째 일은 각 반의 수학 시험 성적의 통계를 내는 일이다.
+>
+> 중덕 고등학교 각 반의 학생들의 수학 시험 성적이 주어졌을 때, 최대 점수, 최소 점수, 점수 차이를 구하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("5800.txt")
+
+'''
+2
+5 30 25 76 23 78
+6 25 50 70 99 70 90
+'''
+
+K = int(input())
+
+for k in range(1, K+1):
+    class_score = list(map(int, input().split()))
+
+    # class_score 에서 점수만 따로 떼어내기
+    scores = class_score[1:]
+    scores_sorted = sorted(scores) # 내림차순 정렬
+
+    # 인접한 두 수의 차이 중에 가장 큰 값 찾기
+    gap = 0
+    for i in range(0, len(scores_sorted)-1):
+        if scores_sorted[i+1] - scores_sorted[i] > gap:
+            gap = scores_sorted[i+1] - scores_sorted[i]
+    
+    # 두 줄로 출력
+    print(f'Class {k}')
+    print(f'Max {max(scores_sorted)}, Min {min(scores_sorted)}, Largest gap {gap}')
+```
+
