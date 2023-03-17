@@ -421,3 +421,32 @@ for _ in range(n):
     print(total_price)
 ```
 
+
+
+#### 11170. 0의 개수 [(link)](https://www.acmicpc.net/problem/11170)
+
+> N부터 M까지의 수들을 종이에 적었을 때 종이에 적힌 0들을 세는 프로그램을 작성하라.
+>
+> 예를 들어, N, M이 각각 0, 10일 때 0을 세면 0에 하나, 10에 하나가 있으므로 답은 2이다.
+
+```python
+import sys
+sys.stdin = open("11170.txt")
+
+# 첫 번째 줄에 테스트 케이스의 수 T가 주어진다.
+T = int(input())
+
+for _ in range(T):
+    N, M = map(int, input().split())
+
+    # N부터 M까지의 수를 str 으로 저장
+    cnt = 0
+    for i in range(N, M+1):
+        word = str(i)
+        # 0의 개수를 count
+        cnt += word.count('0')
+
+    # 각 테스트 케이스마다 N부터 M까지 0의 개수 출력
+    print(cnt)
+```
+
