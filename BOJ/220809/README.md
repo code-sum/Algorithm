@@ -64,3 +64,25 @@ for j in range(26):
         print(chr(j+97), end='')
 ```
 
+
+
+#### 1526. 가장 큰 금민수 [(link)](https://www.acmicpc.net/problem/1526)
+
+> 은민이는 4와 7을 좋아하고, 나머지 숫자는 싫어한다. 금민수는 어떤 수가 4와 7로만 이루어진 수를 말한다.
+>
+> N이 주어졌을 때, N보다 작거나 같은 금민수 중 가장 큰 것을 출력하는 프로그램을 작성하시오.
+
+```python
+N = int(input())
+
+while True:
+
+    # str(N)의 길이 = str(N)에서 4가 들어있는 개수 + 7이 들어있는 개수
+    if len(str(N)) == str(N).count('4') + str(N).count('7'):
+        print(N)
+        break
+    
+    # N 에서 1씩 빼내려가면서 N보다 작거나 같은 조건값을 계속 추적
+    N -= 1
+```
+
