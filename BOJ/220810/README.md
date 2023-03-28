@@ -118,3 +118,38 @@ K = sorted([int(input())for _ in range(10, 20)])[7:]
 print(sum(W), sum(K))
 ```
 
+
+
+#### 10101. 삼각형 외우기 [(link)](https://www.acmicpc.net/problem/10101)
+
+> 창영이는 삼각형의 종류를 잘 구분하지 못한다. 따라서 프로그램을 이용해 이를 외우려고 한다.
+>
+> 삼각형의 세 각을 입력받은 다음, 
+>
+> - 세 각의 크기가 모두 60이면, Equilateral
+> - 세 각의 합이 180이고, 두 각이 같은 경우에는 Isosceles
+> - 세 각의 합이 180이고, 같은 각이 없는 경우에는 Scalene
+> - 세 각의 합이 180이 아닌 경우에는 Error
+>
+> 를 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("10101.txt")
+
+angles = []
+for _ in range(3):
+    angle = int(sys.stdin.readline())
+    angles.append(angle)
+
+if sum(angles) == 180:
+    if angles[0] == angles[1] == angles[2]:
+        print("Equilateral")
+    elif angles[0] == angles[1] or angles[1] == angles[2] or angles[2] == angles[0]:
+        print("Isosceles")
+    else:
+        print("Scalene") 
+else:
+    print("Error")
+```
+
