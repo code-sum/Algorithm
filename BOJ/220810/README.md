@@ -153,3 +153,37 @@ else:
     print("Error")
 ```
 
+
+
+#### 10769. 행복한지 슬픈지 [(link)](https://www.acmicpc.net/problem/10769)
+
+> 승엽이는 자신의 감정을 표현하기 위해서 종종 문자 메시지에 이모티콘을 넣어 보내곤 한다. 승엽이가 보내는 이모티콘은 세 개의 문자가 붙어있는 구조로 이루어져 있으며, 행복한 얼굴을 나타내는 **:-)** 와 슬픈 얼굴을 나타내는 **:-(** 가 있다.
+>
+> 혜성이는 승엽이의 이모티콘을 귀여운 척이라고 생각해 매우 싫어하므로, 승엽이의 문자가 오면 전체적인 분위기만 판단해서 알려주는 프로그램을 작성하고 싶다.
+
+```python
+import sys
+sys.stdin = open("10769.txt")
+
+input_ = input()
+hap_cnt = 0
+sad_cnt = 0
+
+for i in range(0, len(input_) - 2):
+    if input_[i] == ":" and input_[i + 1] == "-":
+        if input_[i + 2] == ")":
+            hap_cnt += 1
+        elif input_[i + 2] == "(":
+            sad_cnt += 1
+
+if hap_cnt == 0 and sad_cnt == 0:
+    print("none")
+else:
+    if hap_cnt > sad_cnt:
+        print("happy")
+    elif hap_cnt < sad_cnt:
+        print("sad")
+    else:
+        print("unsure")
+```
+

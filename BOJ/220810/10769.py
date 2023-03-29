@@ -1,7 +1,6 @@
 # https://www.acmicpc.net/problem/10769
 
 import sys
-
 sys.stdin = open("10769.txt")
 
 input_ = input()
