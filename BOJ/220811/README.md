@@ -231,3 +231,32 @@ for _ in range(3):
     print(max_)
 ```
 
+
+
+#### 2857. FBI [(link)](https://www.acmicpc.net/problem/2857)
+
+> 5명의 요원 중 FBI 요원을 찾는 프로그램을 작성하시오.
+>
+> FBI요원은 요원의 첩보원명에 FBI가 들어있다. 
+
+```python
+# FBI 요원은 input에 FBI 포함
+
+import sys
+sys.stdin = open("2857.txt")
+
+s = []
+for i in range(5):
+    name = input()
+    
+    if "FBI" in name:
+        s.append(i+1)
+    else:
+        continue
+
+if len(s) == 0:
+    print("HE GOT AWAY!")
+else:
+    print(*s)
+```
+
