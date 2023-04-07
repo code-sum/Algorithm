@@ -392,3 +392,29 @@ dy = [-1, 1, -1, 1]
 '''
 ```
 
+
+
+#### 6996. 에너그램 [(link)](https://www.acmicpc.net/problem/6996)
+
+> 두 단어 A와 B가 주어졌을 때, A에 속하는 알파벳의 순서를 바꾸어서 B를 만들 수 있다면, A와 B를 애너그램이라고 한다.
+>
+> 두 단어가 애너그램인지 아닌지 구하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("6996.txt")
+
+n = int(input())
+
+for _ in range(n):
+    a, b = map(str, input().split())
+
+    a_sort = sorted(list(a))
+    b_sort = sorted(list(b))
+
+    if a_sort == b_sort:
+        print("%s & %s are anagrams." %(a, b))
+    else:
+        print("%s & %s are NOT anagrams." %(a, b))
+```
+
