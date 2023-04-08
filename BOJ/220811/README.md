@@ -418,3 +418,66 @@ for _ in range(n):
         print("%s & %s are NOT anagrams." %(a, b))
 ```
 
+
+
+#### 13567. 로봇 [(link)](https://www.acmicpc.net/problem/13567)
+
+> 로봇은 명령어를 읽어들여 정사각형 영역 S를 x축 또는 y축과 평행한 방향으로 움직인다. S의 왼쪽 아래 꼭짓점은 (0, 0)이고, 오른쪽 위의 꼭짓점은 (M, M)이다. 처음에 로봇은 (0, 0)에 위치해 있고, 동쪽 방향을 향하고 있다.
+>
+> 명령어는 로봇이 현재 위치에서 행할 동작과 그 동작과 관련된 값으로 주어진다. 동작은 두 가지가 있는데, `TURN`과 `MOVE`이다. `TURN 0` 명령은 현재 위치에서 왼쪽으로 90도 회전, `TURN 1` 명령은 현재 위치에서 오른쪽으로 90도 회전을 의미한다. `MOVE d` 명령은 로봇이 향하고 있는 방향으로 d만큼 움직이는 것을 의미한다. 여기서 d는 양수이다.
+>
+> 명령의 수행 후 로봇이 S의 경계 또는 내부에 있으면 이 명령어는 유효하다. 만일 명령어 수행 후 로봇이 S의 바깥으로 완전히 나가게 된다면 명령어는 유효하지 않다. 일련의 명령어 열을 이루는 각 명령어가 모두 유효하다면, 이 명령어 열을 유효하다고 한다.
+>
+> 예를 들어 로봇이 왼쪽 그림과 같이 (`MOVE 6, TURN 0, MOVE 5, TURN 0, MOVE 2, TURN 0, MOVE 2, TURN 0, MOVE 4, TURN 0, MOVE 3, MOVE 2`) 명령어를 읽어들인다면, 최종적으로 로봇은 (8, 8) 위치에 있게 된다. 가운데 그림과 같이 (`MOVE 10, TURN 0, MOVE 2, TURN 0, MOVE 5, TURN 1, MOVE 5, TURN 1, MOVE 2, TURN 1, MOVE 3, TURN 0, TURN 0, MOVE 6`) 명령어를 읽어들인다면, 로봇은 (7, 10)에 위치하게 된다. 오른쪽 그림과 같이 로봇이 S 바깥으로 나간다면, 명령어 열은 유효하지 않다.
+>
+> 한 변의 길이가 M인 정사각형과 n개의 명령어, 그리고 로봇이 (0, 0) 위치에서 시작해 동쪽을 바라보고 있을 때, n개의 명령어를 따라 움직였을 때 최종 위치를 출력하는 프로그램을 작성하라.
+
+```python
+import sys
+sys.stdin = open("13567.txt")
+    
+m, n = map(int, input().split())
+m += 1
+
+# 0 으로 채워진 m*m 매트릭스 선언
+matrix = [[0] * m for _ in range(m)]
+
+dx = [0, 1, 0, -1]
+dy = [1, 0, -1, 0]
+
+x, y = 0, 0
+
+cur = 0
+for i in range(n):
+    action, num = input().split()
+    if action == 'TURN':
+        if num == '0':
+            if cur + 1 == 4:
+                cur = 0
+            else:
+                cur += 1
+
+        # if num != '0':
+        else:
+            if cur - 1 < 0:
+                cur = 3
+            else:
+                cur -= 1
+
+    # if action == 'MOVE':
+    else:
+        if 0 <= x + (int(num) * dx[cur]) < m and 0 <= y + (int(num) * dy[cur])< m:
+            matrix[x][y] = 0
+            x += int(num) * dx[cur]; y += int(num) * dy[cur]
+            matrix[x][y] = 1
+        
+        # 명령어 열이 유효하지 않으면 -1 출력
+        else:
+            print(-1)
+            break
+
+# 명령어 수행 후 로봇의 위치의 x좌표와 y좌표(양의 정수 2개 출력)
+else:
+    print(y, x)
+```
+
