@@ -79,3 +79,40 @@ for i in numbers:
 print(ans%10)
 ```
 
+
+
+#### 2557. Hello World [(link)](https://www.acmicpc.net/problem/2557)
+
+> Hello World!를 출력하시오.
+
+```python
+print("Hello World!")
+```
+
+
+
+#### 2562. 최댓값 [(link)](https://www.acmicpc.net/problem/2562)
+
+> 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오.
+>
+> 예를 들어, 서로 다른 9개의 자연수
+>
+> 3, 29, 38, 12, 57, 74, 40, 85, 61
+>
+> 이 주어지면, 이들 중 최댓값은 85이고, 이 값은 8번째 수이다.
+
+```python
+import sys
+sys.stdin = open("2562.txt")
+
+numbers = []
+
+for i in range(9):
+    numbers.append(int(input()))
+print(max(numbers))
+
+for i in range(len(numbers)):
+    if numbers[i] == max(numbers):
+        print(i+1)
+```
+
