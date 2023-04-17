@@ -1,4 +1,4 @@
-# acmicpc.net/problem/2577
+# https://www.acmicpc.net/problem/2577
 
 import sys
 sys.stdin = open("2577.txt")
