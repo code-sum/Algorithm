@@ -325,3 +325,19 @@ chr 함수는 아스키 코드를 문자로 변환
 '''
 ```
 
+
+
+#### 11720. 숫자의 합 [(link)](https://www.acmicpc.net/problem/11720)
+
+> N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
+
+```python
+import sys
+sys.stdin = open("11720.txt")
+
+n = int(input())
+nums = list(map(int, input()))
+
+print(sum(nums))
+```
+
