@@ -1,3 +1,5 @@
+# https://softeer.ai/practice/info.do?idx=1&eid=990
+
 import sys
 
 # 해당 직원이 일주일동안 근무한 총 시간을 분단위로 출력
