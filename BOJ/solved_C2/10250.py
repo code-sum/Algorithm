@@ -7,7 +7,6 @@ for _ in range(t):
     h, w, n = map(int, input().split())
 
     # n번째 손님에게 배정되어야하는 방번호 출력
-    # result = str(층수 floor) + str(층별방번호 num) 
 
     floor = n % h 
     room_number = (n // h) + 1
