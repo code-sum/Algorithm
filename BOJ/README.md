@@ -1,6 +1,7 @@
 # BOJ I/O 처리
 
 > 1. N개의 정수 입력 받기
+> 1. `input()` 보다 빠르게 입력 받기
 
 
 
@@ -9,11 +10,11 @@
 #### 1. N개의 정수 입력 받기
 
 ```python
-# 띄어쓰기로 구분된 데이터를 여러 개 입력 받을 때 (리스트에 담기)
-sample = list(map(int, input().split()))
-
 # 띄어쓰기로 구분된 데이터를 1~5개 이내로 입력 받을 때
 A, B, C = map(int, input().split())
+
+# 띄어쓰기로 구분된 데이터를 여러 개 입력 받을 때 (리스트에 담기)
+sample = list(map(int, input().split()))
 ```
 
 - 위 코드의 원리
@@ -91,3 +92,31 @@ A, B, C = map(int, input().split())
   ```
 
   
+
+#### 2. `input()` 보다 빠르게 입력 받기
+
+```python
+# [기존코드] 띄어쓰기로 구분된 데이터를 1~5개 이내로 입력 받을 때
+A, B, C = map(int, input().split())
+
+# [기존코드] 띄어쓰기로 구분된 데이터를 여러 개 입력 받을 때 (리스트에 담기)
+sample = list(map(int, input().split()))
+```
+
+```python
+import sys
+
+# [신규코드] 띄어쓰기로 구분된 데이터를 1~5개 이내로 입력 받을 때
+A, B, C = map(int, sys.stdin.readline().split())
+
+# [신규코드] 띄어쓰기로 구분된 데이터를 여러 개 입력 받을 때 (리스트에 담기)
+sample = list(map(int, sys.stdin.readline().split()))
+
+# [신규코드] 2차원 리스트를 입력 받아서 matrix 객체에 담기
+matrix = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
+
+# [신규코드] 문자열 입력 받기
+sample_str = sys.stdin.readline().rstrip()
+```
+
+- 위 코드의 원리
