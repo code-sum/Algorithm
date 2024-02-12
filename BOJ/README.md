@@ -120,3 +120,43 @@ sample_str = sys.stdin.readline().rstrip()
 ```
 
 - 위 코드의 원리
+
+  - (1) `input()` vs `sys.stdin.readline()` 차이점
+
+    - `input()`  은 입력된 값의 개행 문자(\n)를 자동으로 삭제하여 리턴 (=`rstrip()` 의 기능)
+
+      ```python
+      >>> a = input()
+      apple
+      >>> a
+      'apple'
+      ```
+
+    - `sys.stdin.readline()` 은 입력된 값의 개행 문자(\n)를 포함해서 그대로 리턴 
+
+      - 따라서 개행 문자를 제거하려면 처음부터 type 을 int 로 받아서 개행 문자 없게 만들거나, 개행 문자 제거해주는 `rstrip()` 을 써야함
+
+      ```python
+      import sys
+      
+      a = sys.stdin.readline()
+      apple
+      >>> a
+      'apple\n'
+      ```
+
+      ```python
+      >>> a = sys.stdin.readline().rstrip()
+      apple
+      >>> a
+      'apple'
+      ```
+
+      ```python
+      >>> a = int(sys.stdin.readline())
+      5
+      >>> a
+      5
+      ```
+
+      
