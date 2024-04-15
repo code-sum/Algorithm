@@ -14,12 +14,15 @@
 - [SWEA I/O 처리](SWEA)
 - Softeer I/O 처리
 
+### 🗂️ 문제모음 (KOR/ENG)
 
-### 🗂️ 문제모음 (ENG/KOR)
+- [[KOR] 정보처리기사 실기 (C | Java | Python)](EIP)
+
+- [[KOR] Baekjoon Online Judge](https://www.acmicpc.net/)
+- [[KOR] Programmers](https://school.programmers.co.kr/)
+- [[KOR] Softeer](https://softeer.ai/login)
+- [[KOR] SW Expert Academy](https://swexpertacademy.com/)
 - [[ENG] LeetCode](https://leetcode.com/)
+
 - [[ENG] HackerRank](https://www.hackerrank.com/)
 - [[ENG] Codility](https://www.codility.com/)
-- [[KOR] Programmers](https://school.programmers.co.kr/)
-- [[KOR] SW Expert Academy](https://swexpertacademy.com/)
-- [[KOR] Baekjoon Online Judge](https://www.acmicpc.net/)
-- [[KOR] 정보처리기사 실기 기출 (C, Java, Python)](EIP)
