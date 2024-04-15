@@ -22,3 +22,4 @@
 - [[KOR] Programmers](https://school.programmers.co.kr/)
 - [[KOR] SW Expert Academy](https://swexpertacademy.com/)
 - [[KOR] Baekjoon Online Judge](https://www.acmicpc.net/)
+- [[KOR] 정보처리기사 실기 기출 (C, Java, Python)](EIP)
