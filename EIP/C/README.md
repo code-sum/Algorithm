@@ -17,3 +17,32 @@
   }
   ```
   - 답 : n[(i+1)%5]
+
+
+
+- 다음 C언어 코드의 출력은?
+
+  ```c
+  #include <stdio.h>
+  
+  struct jsu {
+      char nae[12];
+      int os, db, hab, hhab;
+  };
+  
+  int main() {
+      struct jsu st[3] = {
+          {"data1", 95, 88}, {"data2", 84, 91}, {"data3", 86, 75}
+      };
+      struct jsu* p;
+      p = &st[0];
+      
+      printf("%d\n", (p+1)->hab = (p+1)->os + (p+2)->db);   // 159
+      printf("%d\n", (p+1)->hhab = (p+1)->hab + p->os + p->db);   // 342
+      printf("%d\n", (p+1)->hab + (p+1)->hhab);   // 501 (최종 정답, 159+342)
+      
+      return 0;
+  }
+  ```
+
+  - 답 : 501 (159+342=501 이므로)
