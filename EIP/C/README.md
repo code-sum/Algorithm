@@ -63,3 +63,53 @@
   ```
 
   - 답 : 501 (159+342=501 이므로)
+
+
+
+#### 2022년 3회
+
+- 문제1. 다음 C언어로 구현된 프로그램을 분석하여 배열 `mines` 의 각 칸에 들어갈 값을 쓰시오.
+
+  ```c
+  #include <stdio.h>
+  
+  main() {
+   
+      int field[4][4] = {{0,1,0,1},{0,0,0,1},{1,1,1,0},{0,1,1,1}};
+      int mines[4][4] = {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}}; 
+  	int w=4, h=4;
+      
+      for (int y=0; y<h; y++) {
+          for (int x=0; x<w; x++) {
+              if (field[y][x] == 0) continue;
+              for (int j=y-1; j<=y+1; j++) {
+                  for (int i=x-1; i<=x+1; i++) {
+                      if (calculate(w,h,j,i)==1)
+                          mines[j][i] += 1;
+                  }
+              }
+          }
+      }
+      
+      for (int y=0; y<h; y++) {
+          for (int x=0; x<w; x++) {
+              printf("%d", mines[y][x]);
+          	printf("\n");
+          }
+      }
+  }    
+  
+  
+  int calculate(int w, int h,int j,int i) {
+  	if (i>=0 && i<w && j>=0 && j<h) return 1;
+  	return 0;
+  }
+  ```
+
+  - 답 : 
+
+    | 1    | 1    | 3    | 2    |
+    | ---- | ---- | ---- | ---- |
+    | 3    | 4    | 5    | 3    |
+    | 3    | 5    | 6    | 4    |
+    | 3    | 5    | 5    | 3    |
