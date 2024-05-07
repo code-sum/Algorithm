@@ -45,6 +45,35 @@
 
 
 
+#### 2020년 2회 [2개 출제]
+
+- 문제5. 다음은 자바 코드이다. 다음 밑줄에 들어갈 키워드를 쓰시오.
+
+  ```java
+  class parent
+  	public void show() {
+  		system.out.println("Parent");
+  	}
+  }
+  
+  class Child extends Parent {
+  	public void show(){
+  		system.out.println("Child");
+  	}
+  }
+  
+  public class good {
+  	public static void main (String[] args) {
+  		Parent pa = ____ Child();
+  	    pa.show();
+  	}
+  }
+  ```
+
+  - 답 : new
+
+
+
 #### 2022년 3회
 
 - 문제4. 다음 JAVA로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)
