@@ -141,6 +141,26 @@
 
   - [답] Vehicle name : Spark
 
+- 문제17. 다음은 자바 코드이다. 출력 결과를 쓰시오.
+
+  ```java
+  public class good {
+  	public static void main(String[] args) {
+          int i=0;
+          int sum=0;
+          while (i<10) {
+              i++;
+              if (i%2 ==1)
+                  continue;
+              sum += i;
+          }
+  	System.out.println(sum);
+  	}
+  }
+  ```
+
+  - [답] 30
+
 
 
 #### 2022년 3회
