@@ -18,7 +18,7 @@
   }
   ```
 
-  - 답 : 0 1 2 3
+  - [답] 0 1 2 3
 
 - 문제14. 다음은 자바 소스코드이다. 출력 결과를 쓰시오.
 
@@ -41,7 +41,7 @@
   }
   ```
 
-  - 답 : -8 (switch case문에 break가 없음에 유의)
+  - [답] -8 (switch case문에 break가 없음에 유의)
 
 
 
@@ -70,7 +70,7 @@
   }
   ```
 
-  - 답 : new
+  - [답] new
 
 - 문제19. 다음은 자바 코드이다. 출력 결과를 쓰시오.
 
@@ -99,7 +99,47 @@
   }
   ```
 
-  - 답 : a=10
+  - [답] a=10
+
+
+
+#### 2020년 3회 [2개 출제]
+
+- 문제15. 다음은 자바 코드이다. 출력 결과를 쓰시오.
+
+  ```java
+  abstract class vehicle{
+  	private String name;
+      abstract public String getName(String val);
+      public String getName() {
+      	return "vehicle name:" + name;
+      }
+  	public void setName(String val) {
+      	name = val;
+      }
+  }
+  
+  class Car extends Vehicle {
+  	public Car(String val) {
+      	setName(val);
+  	}
+  public String getName(String val) {
+  	return "Car name : " + val;
+  	}
+  public String getName(byte val[]) {
+  	return "Car name : " + val;
+  	}
+  }
+  
+  public class good {
+  	public Static void main(String[] args) {
+      Vehicle obj = new Car("Spark");
+      System.out.print(obj.getName());
+      }
+  }
+  ```
+
+  - [답] Vehicle name : Spark
 
 
 
@@ -127,5 +167,5 @@
   }
   ```
   
-  - 답 : 24513
+  - [답] 24513
 
