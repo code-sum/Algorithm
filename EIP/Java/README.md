@@ -132,7 +132,7 @@
   }
   
   public class good {
-  	public Static void main(String[] args) {
+  	public Static void main (String[] args) {
       Vehicle obj = new Car("Spark");
       System.out.print(obj.getName());
       }
@@ -145,7 +145,7 @@
 
   ```java
   public class good {
-  	public static void main(String[] args) {
+  	public static void main (String[] args) {
           int i=0;
           int sum=0;
           while (i<10) {
@@ -160,6 +160,34 @@
   ```
 
   - [답] 30
+
+
+
+#### 2020년 4회 [3개 출제]
+
+- 문제5. 다음은 n이 10일 때, 10을 2진수로 변환하는 자바 소스 코드이다. 괄호 1,2에 알맞는 값을 적으시오.
+
+  > [출력결과] 00001010
+
+  ```java
+  class good {
+  	public static void main (String[] args) {
+  		int[]a = new int[8];
+  		int i=0; int n=10;
+  		while (   1.  ) {
+          	a[i++] = (   2.  );
+              n /= 2;
+          }
+          for (i=7; i>=0; i--) {
+          	System.out.print(a[i]);
+  		}
+  	}
+  }
+  ```
+
+  - [답] 
+    - (1) n > 0 or n >=1 or i < 8 or i <= 7
+    - (2) n%2 or n&1
 
 
 
