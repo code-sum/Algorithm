@@ -30,7 +30,7 @@
   }
   ```
 
-  - 답 : 50758595100 (Bubble Sort 방식으로 오름차순 정렬된 배열의 원소들을 공백 없이 출력)
+  - [답] 50758595100 (Bubble Sort 방식으로 오름차순 정렬된 배열의 원소들을 공백 없이 출력)
 
 
 
@@ -51,29 +51,54 @@
   }
   ```
 
-  - 답 : 0 (c 는 0으로 선언된 상태이므로 어떤 수를 곱해도 0임)
+  - [답]  0  (c 는 0으로 선언된 상태이므로 어떤 수를 곱해도 0임)
 
 - 문제13. 다음은 C언어 소스 코드이다. 출력 결과를 쓰시오.
 
   ```c
   #include <studio.h>
   
-  int r1(){
+  int r1() {
   	return 4;
   }
-  int r10(){
+  int r10() {
   	return (30+r1());
   }
-  int r100(){
+  int r100() {
   	return (200+r10());
   }
-  int main(){
+  int main() {
   	printf("%d\n", r100());
   	return 0;
   }
   ```
 
-  - 답 : 234
+  - [답] 234
+
+
+
+#### 2020년 4회 [1개 출제]
+
+- 문제18. 다음은 C언어 소스 코드이다. 출력값을 쓰시오.
+
+  ```c
+  #include <stdio.h>
+  
+  void main() {
+  	char *p = "KOREA"
+      printf("%s\n" , p);
+      printf("%s\n" , p+3);
+      printf("%c\n" , *p);
+      printf("%c\n" , *(p+3));
+      printf("%c\n" , *p+2);
+  ```
+
+  - [답] 
+    - KOREA
+    - EA
+    - K
+    - E
+    - M
 
 
 
