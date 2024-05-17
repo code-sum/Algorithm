@@ -215,6 +215,33 @@
     - (1) 3
     - (2) 5
 
+- 문제19. 다음은 자바 소스 코드이다. 출력 결과를 쓰시오.
+
+  ```java
+  class parent {
+  	public int compute(int num) {
+  		if (num <= 1) return num;
+  		return compute(num-1) + compute(num-2);
+  	}
+  }
+   
+  class Child extends parent {
+  	public int compute(int num) {
+  		if (num <= 1) return num;
+  		return compute(num-1) + compute(num-3);
+  	}
+  }
+     
+  class good {
+  	public static void main (String[] args) {
+  		parent obj = new Child();
+  		System.out.print(obj.compute(4));
+  	}
+  }
+  ```
+
+  - [답] 1
+
 
 
 #### 2022년 3회
