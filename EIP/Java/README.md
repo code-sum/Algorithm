@@ -244,6 +244,32 @@
 
 
 
+#### 2021년 1회 [2개 출제]
+
+- 문제7. 다음 Java 프로그램 결과를 쓰시오.
+
+  ```java
+  public class good {
+  	public static void main(String[] args) {
+  		int[][]arr = new int[][]{{45,50,75},{89}};
+  		System.out.println(arr[0].length);
+  		System.out.println(arr[1].length);
+  		System.out.println(arr[0][0]);
+  		System.out.println(arr[0][1]);
+  		System.out.println(arr[1][0]);
+      }
+  }
+  ```
+
+  - [답] 
+    - 3
+    - 1
+    - 45
+    - 50
+    - 89
+
+
+
 #### 2022년 3회
 
 - 문제4. 다음 JAVA로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)
