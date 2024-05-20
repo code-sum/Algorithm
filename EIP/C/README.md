@@ -102,6 +102,35 @@
 
 
 
+#### 2021년 1회 [1개 출제]
+
+- 문제15. 다음은 C언어 프로그램이다. 실행 결과를 쓰시오.
+
+  ```c
+  #include <stdio.h>
+  
+  struct good {
+  	char name[10];
+  	int age;
+  };
+   
+  void main() {
+  	struct good s[] = {"Kim",28,"Lee",38,"Seo",50,"Park",35};
+      
+  	struct good *p;
+  	p = s;
+  	p++;
+  	printf("%s\n", p-> name);
+  	printf("%d\n", p-> age);
+  };
+  ```
+
+  - [답] 
+    - Lee
+    - 38
+
+
+
 #### 2021년 3회
 
 - 문제7. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
