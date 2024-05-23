@@ -131,6 +131,31 @@
 
 
 
+#### 2021년 2회 [2개 출제]
+
+- 문제16. 다음은 C언어 프로그램이다. 실행 결과를 쓰시오.
+
+  ```c
+  int main() {
+  	int res;
+  	res = mp(2,10);
+  	printf("%d",res);
+  	return 0;
+  }
+  
+  int mp(int base, int exp) {
+  	int res = 1;
+  	for (int i=0; i < exp; i++) {
+  		res = res * base;
+  	}
+  	return res;
+  }
+  ```
+
+  - [답] 1024
+
+
+
 #### 2021년 3회
 
 - 문제7. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
