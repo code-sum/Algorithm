@@ -292,6 +292,28 @@
 
 
 
+#### 2021년 2회 [2개 출제]
+
+- 문제17. 다음은 Java 프로그램이다. 객체 생성 없이 사용할 수 있는 메소드를 정의하려면 빈 괄호 안에 무엇을 써야하는가?
+
+  > 참고로 아래 코드 출력결과는 `positive` 이다.
+
+  ```java
+  public class Test {
+  	public static void main(String[] args) {
+  		System.out.print(Test.check(1));
+  	}
+     
+  	public (  괄호  ) String check(int num) {
+  		return (num >= 0) ? "positive" : "negative";
+  	}
+  }
+  ```
+
+  - [답] static
+
+
+
 #### 2022년 3회
 
 - 문제4. 다음 JAVA로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)
