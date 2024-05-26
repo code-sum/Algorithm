@@ -312,6 +312,32 @@
 
   - [답] static
 
+- 문제19. 다음은 Java 프로그램이다. 실행 결과를 쓰시오.
+
+  ```java
+  public class over1 {
+  	public static void main(String[] args) {
+  		ovr1 a1 = new ovr1();
+  		ovr2 a2 = new ovr2();
+  		System.out.println(a1.sun(3,2) + a2.sun(3,2));
+  	}
+      
+  	int sun(int x, int y) {
+  		return x + y;
+  	}
+  }
+  
+  class ovr2 extends ovr1 {
+  
+  	int sun(int x, int y) {
+  		return x - y + super.sun(x,y);
+  	}
+  
+  }
+  ```
+
+  - [답] 11
+
 
 
 #### 2022년 3회
