@@ -340,6 +340,43 @@
 
 
 
+#### 2021년 3회 [2개 출제]
+
+- 문제1. 다음 Java 코드에 대한 알맞는 출력값을 쓰시오.
+
+  ```java
+  class Connection {
+  	private static Connection _inst = null;
+  	private int count = 0;
+  	static public Connection get() {
+  		if (_inst == null) {
+  			_inst = new Connection();
+  			return _inst; 
+  		}
+  		return _inst;
+  	}
+  	public void count() { count ++; }
+  	public int getCount() { return count; }
+  }
+   
+  public class testcon {
+  	public static void main(String[] args) {
+  		Connection conn1 = Connection.get();
+  		conn1.count();
+  		Connection conn2 = Connection.get();
+  		conn2.count();
+  		Connection conn3 = Connection.get();
+  		conn3.count();
+      
+  		System.out.print(conn1.getCount());
+  	}
+  }
+  ```
+
+  - [답] 3
+
+
+
 #### 2022년 3회
 
 - 문제4. 다음 JAVA로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)
