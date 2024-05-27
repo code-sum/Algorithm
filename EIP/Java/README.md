@@ -342,7 +342,7 @@
 
 #### 2021년 3회 [2개 출제]
 
-- 문제1. 다음 Java 코드에 대한 알맞는 출력값을 쓰시오.
+- 문제1. 다음 Java 코드에 대한 알맞은 출력값을 쓰시오.
 
   ```java
   class Connection {
@@ -374,6 +374,33 @@
   ```
 
   - [답] 3
+
+- 문제11. 다음 Java 코드에 대한 알맞은 출력값을 쓰시오.
+
+  ```java
+  public class testco {
+  	public static void main(String[] args) {
+  		int a = 3, b = 4, c = 3, d = 5;
+  		if ((a == 2 | a == c) & !(c > d) & (1 == b ^ c != d)) {
+  			a = b + c;
+  			if (7 == b ^ c != a) {
+  				System.out.println(a);
+  			} else {
+  				System.out.println(b);
+  			}
+  		} else {
+  			a = c + d;
+  			if (7 == c ^ d != a) {
+  				System.out.println(a);
+  			} else {
+  				System.out.println(d);
+  			}
+  		}
+  	}
+  }
+  ```
+
+  - [답] 7
 
 
 
