@@ -404,6 +404,40 @@
 
 
 
+#### 2022년 1회 [2개 출제]
+
+- 문제3. 다음 Java 코드에 대한 알맞은 출력값을 쓰시오.
+
+  ```java
+  class A {
+  	int a;
+  	int b;
+  }
+    
+  public class Main {
+  	static void func1(A m) {
+  	m.a *= 10;
+  	}
+    
+  	static void func2(A m) {
+  	m.a += m.b;
+  	}
+    
+  	public static void main(String args[]) {
+  		A m = new A();
+  		m.a = 100;
+  		func1(m);
+  		m.b = m.a;
+  		func2(m);
+  		System.out.printf("%d", m.a);
+  	}
+  }
+  ```
+
+  - [답] 2000
+
+
+
 #### 2022년 3회
 
 - 문제4. 다음 JAVA로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)
