@@ -436,6 +436,26 @@
 
   - [답] 2000
 
+- 문제11. 다음 Java 코드에서 밑줄에 들어갈 알맞은 코드를 작성하시오.
+
+  ```java
+  class Car implements Runnable {
+  	int a;
+  	public void run() {
+  		system.out.println("message")
+  	}
+  }
+    
+  public class Main {
+  	public static void main(String args[]) {
+  		Thread t1 = new Thread(new _____());
+  		t1.start();
+  	}
+  }
+  ```
+
+  - [답] Car
+
 
 
 #### 2022년 3회
