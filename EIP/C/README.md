@@ -250,6 +250,30 @@
 
   - [답] 120 (5x4x3x2x1)
 
+- 문제15. 다음은 C언어로 구현된 프로그램이다. 괄호 ( ) 안에 올바른 연산자를 써서 정수를 역순으로 출력하는 기능을 완성하시오. (단, 1230 처럼 0으로 끝나는 정수는 고려하지 않는다)
+
+  ```c
+  #include <stdio.h>
+  
+  int main() {
+  	int number = 1234;
+  	int div = 10, result = 0;
+   
+  	while (number ( 1. ) 0) {
+  		result = result * div;
+  		result = result + number ( 2. ) div;
+  		number = number ( 3. ) div;
+  	}
+   
+  	printf("%d", result);
+  }
+  ```
+
+  - [답] 
+    - (1)  !=  또는  > 
+    - (2)  ÷  (나머지 연산자)
+    - (3)  /  (몫 연산자)
+
 
 
 #### 2023년 2회
