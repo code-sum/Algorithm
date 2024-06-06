@@ -274,6 +274,31 @@
     - (2)  ÷  (나머지 연산자)
     - (3)  /  (몫 연산자)
 
+- 문제17. 다음은 C언어로 구현된 프로그램이다. 알맞은 출력 값을 작성하시오.
+
+  ```c
+  #include <stdio.h> 
+  
+  int isPrime(int number) { 
+  	int i; 
+  	for (i=2; i<number; i++) { 
+  		if (number % i == 0) return 0; 
+  	} 
+  	return 1; 
+  } 
+   
+  int main(void) { 
+  	int number = 13195, max_div=0, i; 
+  	for (i=2; i<number; i++) {
+  		if (isPrime(i) == 1 && number % i == 0) max_div = i;   
+      }
+  	printf("%d", max_div); 
+  	return 0; 
+  }
+  ```
+
+  - [답] 29
+
 
 
 #### 2023년 2회
