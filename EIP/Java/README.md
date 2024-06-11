@@ -482,6 +482,34 @@
 
   - [답] -8
 
+- 문제17. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  public class Conv { 
+      int a;
+  	public Conv(int a) {
+  		this.a = a;
+  	} 
+  	int func() {
+  		int b = 1; 
+  		for (int i=1; i<a; i++) { 
+  			b = a * i + b; 
+  		}
+  		return a + b;
+  	}
+  }
+   
+  public static void main(String[] args) {
+  	Conv obj = new Conv(3);
+  	obj.a = 5; 
+  	int b = obj.func();
+  	system.out.print(obj.a + b);
+  	i
+  }
+  ```
+
+  - [답] 61
+
 
 
 #### 2022년 3회
