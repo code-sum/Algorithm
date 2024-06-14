@@ -512,7 +512,7 @@
 
 
 
-#### 2022년 3회
+#### 2022년 3회 [3개 출제]
 
 - 문제4. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
 
@@ -538,3 +538,25 @@
   
   - [답] 24513
 
+- 문제19. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  public class Main {
+      static int[] mkarr() {
+          int[] tempArr = new int[4];
+          for (int i=0; i<tempArr.length; i++) {
+              tempArr[i] = i;
+          }
+          return tempArr;
+      }
+      
+      public static void main(String[] args) {
+          int[] intArr;
+          intArr = mkarr();
+          for (int i=0; i<intArr.length; i++)
+              System.out.print(intArr[i]);
+      }
+  }
+  ```
+
+  - [답] 0123
