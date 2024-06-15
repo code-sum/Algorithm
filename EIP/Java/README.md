@@ -25,18 +25,18 @@
   ```java
   public class good {
   	public static void main (String[] args) {
-  	int i = 3;
-  	int k = 1;
-  	swich (i) {
-  		case 0;
-  		case 1;
-  		case 2;
-  		case 3 k = 0;
-  		case 4 k += 3;
-  		case 5 k -= 10;
-  		default: k--;
-  	}
-  	system.out.print(k);
+  		int i = 3;
+  		int k = 1;
+  		swich (i) {
+  			case 0;
+  			case 1;
+  			case 2;
+  			case 3 k = 0;
+  			case 4 k += 3;
+  			case 5 k -= 10;
+  			default: k--;
+  		}
+  		system.out.print(k);
   	}
   }
   ```
@@ -57,7 +57,7 @@
   }
   
   class Child extends Parent {
-  	public void show(){
+  	public void show() {
   		system.out.println("Child");
   	}
   }
@@ -123,18 +123,18 @@
   	public Car(String val) {
       	setName(val);
   	}
-  public String getName(String val) {
-  	return "Car name : " + val;
+  	public String getName(String val) {
+  		return "Car name : " + val;
   	}
-  public String getName(byte val[]) {
-  	return "Car name : " + val;
+  	public String getName(byte val[]) {
+  		return "Car name : " + val;
   	}
   }
   
   public class good {
   	public Static void main (String[] args) {
-      Vehicle obj = new Car("Spark");
-      System.out.print(obj.getName());
+      	Vehicle obj = new Car("Spark");
+      	System.out.print(obj.getName());
       }
   }
   ```
@@ -560,3 +560,20 @@
   ```
 
   - [답] 0123
+
+- 문제20. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  public class Exam {
+      public static void main(String[] args){
+          int a = 0;
+          for (int i=1; i<999; i++) {
+              if(i%3==0 && i%2==0)
+                  a = i;
+          }
+          System.out.print(a);
+      }
+  }
+  ```
+
+  - [답] 996
