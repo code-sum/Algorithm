@@ -577,3 +577,34 @@
   ```
 
   - [답] 996
+
+
+
+#### 2023년 1회 [4개 출제]
+
+- 문제1. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  class Static {
+      public int a = 20;
+      static int b = 0;
+  }
+   
+  public class Main {
+      public static void main(String[] args) {
+          int a = 10;
+          Static.b = a;
+          Static st = new Static();
+          System.out.println(Static.b++);
+          System.out.println(st.b);
+          System.out.println(a);
+          System.out.print(st.a);
+      }
+  }
+  ```
+
+  - [답]
+    - 10
+    - 11
+    - 10
+    - 20
