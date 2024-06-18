@@ -483,6 +483,25 @@
     - Art 
     - Art
 
+- 문제3. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```c
+  #include <stdio.h>
+   
+  int main() {
+      char* a = "qwer";
+      char* b = "qwtety";
+   
+      for (int i = 0; a[i] != '\0' ; i++) {
+          for (int j = 0; b[j] != '\0'; j++) {
+              if (a[i] == b[j]) printf("%c", a[i]);
+          }
+      }
+  }
+  ```
+
+  - [답] qwe
+
 
 
 #### 2023년 2회
