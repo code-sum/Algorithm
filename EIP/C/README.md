@@ -502,6 +502,33 @@
 
   - [답] qwe
 
+- 문제9. 다음은 이진수를 십진수로 변환하는 C언어 코드이다. 괄호 (a) (b) 에 적합한 답을 작성하시오.
+
+  ```c
+  #include <stdio.h>
+   
+  int main() {
+      int input = 101110;
+      int di = 1;
+      int sum = 0;
+   
+      while (1) {
+          if (input == 0) break
+          else {
+              sum = sum + (input (a)(b)) * di;
+              di = di * 2;
+              input = input / 10;
+          }
+      }
+      printf("%d", sum);
+      return 0;
+  }
+  ```
+
+  - [답]
+    - (a) %    (b) 10 or 5 or 2
+    - (a) &    (b) 1
+
 
 
 #### 2023년 2회
