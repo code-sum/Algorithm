@@ -580,7 +580,7 @@
 
 
 
-#### 2023년 1회 [4개 출제]
+#### 2023년 1회 [3개 출제]
 
 - 문제1. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
 
@@ -608,3 +608,33 @@
     - 11
     - 10
     - 20
+
+- 문제17. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  abstract class Vehicle {
+      String name;
+      abstract public String getName(String val);
+      public String getName() {
+              return "Vehicle name: " + name;
+      }
+  }
+   
+  class Car extends Vehicle {
+      public Car(String val) {
+              name=super.name=val;
+      }
+      public String getName(String val) {
+              return "Car name:" + val;
+      }
+  }
+   
+  public class Main {
+      public static void main(String[] args) {
+      Vehicle obj = new Car("Spark");
+      System.out.println(obj.getName());
+      }
+  }
+  ```
+
+  - [답] Vehicle name: Spark
