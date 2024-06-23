@@ -643,3 +643,39 @@
   ```
   
   - [답] Vehicle name: Spark
+
+- 문제20. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  class Parent {
+      int x = 100;
+      Parent() {
+          this(500);
+      }
+      Parent(int x) {
+          this.x = x;
+      }
+      int getX() {
+          return this.x;
+      }
+  }
+   
+  class Child extends Parent {
+      int x = 1000;
+      Child() {
+          this(5000);
+      }
+      Child(int x) {
+          this.x = x;
+      }
+  }
+   
+  public class Main {
+      public static void main(String[] args) {
+          Child obj = new Child();
+          System.out.println(obj.getX());
+      }
+  }
+  ```
+
+  - [답] 500
