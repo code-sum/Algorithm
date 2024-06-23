@@ -611,6 +611,8 @@
 
 - 문제17. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
 
+  > 2020년 3회 15번 기출문제와 동일하게 출제
+  
   ```java
   abstract class Vehicle {
       String name;
@@ -627,6 +629,9 @@
       public String getName(String val) {
               return "Car name:" + val;
       }
+      public String getName(byte val[]) {
+  		return "Car name : " + val;
+  	}
   }
    
   public class Main {
@@ -636,5 +641,5 @@
       }
   }
   ```
-
+  
   - [답] Vehicle name: Spark
