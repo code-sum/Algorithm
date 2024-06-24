@@ -558,7 +558,7 @@
 
 
 
-#### 2023년 2회
+#### 2023년 2회 [5개 출제]
 
 - 문제1. 다음 C언어로 구현된 프로그램에 54321 을 입력시킨 결과가 43215일 때, <처리조건>을 참고하여 괄호에 들어갈 알맞은 식을 쓰시오.
 
@@ -570,7 +570,7 @@
   > - 0~9, (, ), [, ]
 
   ```C
-  #include<stdio.h>
+  #include <stdio.h>
   
   int main(void) {
       
@@ -590,4 +590,40 @@
   }
   ```
 
-  - 답 : n[(i+1)%5]
+  - [답] n[(i+1)%5]
+
+- 문제3. 다음 C언어로 구현된 프로그램에 홍길동, 김철수, 박영희 가 순서대로 입력될 때, 알맞은 출력값을 쓰시오.
+
+  ```c
+  #include <stdio.h>
+  #include <stdlib.h> 
+  
+  char n[30];
+  char *test() {
+      printf(입력하세요 : );
+      gets(n);
+      return n;
+  }
+   
+  int main()
+   
+  {
+      char * test1;
+      char * test2;
+      char * test3;
+   
+      test1 = test();
+      test2 = test();
+      test3 = test();
+   
+      printf("%s\n",test1);
+      printf("%s\n",test2);
+      printf("%s",test3);
+   
+  }
+  ```
+
+  - [답]
+    - 박영희
+    - 박영희
+    - 박영희
