@@ -627,3 +627,36 @@
     - 박영희
     - 박영희
     - 박영희
+
+- 문제5. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```c
+  #include <stdio.h>
+  
+  int main() {
+  	int n[3] = [73, 95, 82]; 
+  	sum = 0;
+      int i;
+   
+  	for (i=0; i<3; i++) {
+  	    sum += n[i];
+  	}
+   
+  	switch(sum/30) {
+      	case 10:
+      	case 9: 
+              printf("A");
+      	case 8: 
+              printf("B");
+      	case 7: 
+      	case 6: 
+              printf("C");
+      	default: 
+              printf("D");
+  	}
+      
+      return 0;
+  }
+  ```
+
+  - [답] BCD
