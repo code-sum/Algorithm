@@ -676,3 +676,47 @@
   ```
 
   - [답] 505
+
+- 문제9. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```c
+  #include <stdio.h>
+  #define MAX_SIZE 10
+   
+  int arr[MAX_SIZE];
+  int point= -1; 
+   
+  void into(int num) {
+      if (point >= 9) printf("Full");
+      arr[++point] = num;
+  }
+   
+  int take() {
+      if (isEmpty() == 1) printf("Empty");
+      return arr[point--];
+  }
+   
+  int isEmpty() {
+      if (point == -1) return 1;
+      return 0;
+  }
+   
+  int isFull() {
+      if (point == 9) return 1;
+      return 0;
+  }
+   
+  int main(int argc, char const *argv[]){
+      int e;
+      into(5); into(2);
+      while(!isEmpty()){
+          printf("%d", take());
+          into(4); into(1); printf("%d", take()); 
+          into(3); printf("%d", take()); printf("%d", take()); 
+          into(6); printf("%d", take()); printf("%d", take()); 
+      }
+      return 0;
+  }
+  ```
+
+  - [답] 213465 (스택 자료구조)
