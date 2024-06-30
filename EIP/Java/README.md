@@ -716,3 +716,27 @@
     - (2) (m%1000) / 500
     - (3) (m%500) / 100
     - (4) (m%100) / 10
+
+- 문제14. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  public class Main {
+      public static void main(String[] args) {
+          String str1 = "Programming";
+          String str2 = "Programming";
+          String str3 = new String("Programming");
+          
+          System.out.println(str1==str2);
+          System.out.println(str1==str3);
+          System.out.println(str1.equals(str3));
+          System.out.println(str2.equals(str3));
+      }
+  }
+  ```
+
+  - [답] 
+    - true
+    - false
+    - true
+    - true
+
