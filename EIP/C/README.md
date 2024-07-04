@@ -778,7 +778,39 @@
     - E
     - O
 
-- 문제4. 
+- 문제4. 다음 C언어로 구현된 프로그램을 분석하여 괄호 () 에 적절한 기호를 쓰시오.
+
+  > 출력결과: 
+  > 10
+  > 10
+
+  ```c
+  #include <stdio.h>
+  #include <stdlib.h>
+  
+  typedef struct Data {
+      char c;
+      int *numPtr;
+  } Data;
+  
+  int main() {
+      int num = 10;
+      Data d1;
+      Data *d2 = malloc(sizeof(struct Data));
+      
+      d1.numPtr = &num;
+      d2 (괄호) numPtr = &num;
+  
+      printf("%d\n", *d1.numPtr);
+      printf("%d\n", *d2->numPtr);
+  
+      free(d2);
+      return 0;
+  }
+  ```
+
+  - [답] ->
+    - 포인터가 가리키는 구조체의 멤버에 접근할 때는 **`->`** 연산자 사용
 
 - 문제9. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
 
