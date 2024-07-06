@@ -839,4 +839,20 @@
 
   - [답] 34
 
-- 문제15. 
+- 문제15. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```c
+  #include <stdio.h>
+  
+  int f(int n) {
+      if (n <= 1) return 1;
+      else return n * f(n - 1);
+  }
+  
+  int main() {
+      printf("%d", f(7));
+      return 0;
+  }
+  ```
+
+  - [답] 5040
