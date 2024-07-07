@@ -740,3 +740,45 @@
     - true
     - true
 
+
+
+#### 2023년 3회 [3개 출제]
+
+- 문제1. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  public class Main {
+  	public static void main(String[] args) {
+  		A b = new B();
+  		b.paint();
+  		b.draw();
+  	}
+  }
+  
+  class A {
+  	public void paint() {
+  		System.out.print("B");
+  		draw();
+  	}
+  	public void draw() {
+  		System.out.print("A");
+  	}
+  }
+  
+  class B extends A {
+  	public void paint() {
+  		super.paint();
+  		System.out.print("C");
+  		draw();
+  	}
+  	public void draw() {
+  		System.out.print("D");
+  	}
+  }
+  ```
+
+  - [답] BDCDD
+
+- 문제12. 
+
+- 문제14. 
