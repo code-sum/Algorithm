@@ -779,6 +779,29 @@
 
   - [답] BDCDD
 
-- 문제12. 
+- 문제12. 다음 Java 로 구현된 프로그램을 실행하면 에러가 발생한다. 에러의 원인이 되는 코드라인이 몇 번인지 쓰시오.
+
+  ```java
+  class Person {
+      private String name;
+      public Person(String val) {
+          name = val;
+      }
+      public static String get() {
+      return name;
+      }
+      public void print() {
+          System.out.println(name);
+      }
+  }
+  public class main {
+      public static void main(String[] args) {
+          Person obj = new Person("Kim");
+          obj.print();
+      }
+  }
+  ```
+
+  - [답] 7
 
 - 문제14. 
