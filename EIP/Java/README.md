@@ -804,4 +804,35 @@
 
   - [답] 7
 
-- 문제14. 
+- 문제14. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  > 2020년 4회와 동일한 문제
+
+  ```java
+  class Parent {
+  	int compute(int num) {
+  		if(num <= 1)
+  			return num;
+  		return compute(num-1) + compute(num-2);
+  	}
+  }
+  
+  class Child extends Parent {
+  	int compute(int num) {
+  		if(num <= 1)
+  			return num;
+  		return compute(num-1) + compute(num-3);
+  	}
+  }
+  
+  public class main {
+  	public static void main(String args[]) {
+  		Parent obj = new Child();
+  		System.out.print(obj.compute(7));
+  	}
+  }
+  ```
+
+  - [답] 2
+
+
