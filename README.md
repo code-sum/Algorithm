@@ -29,4 +29,3 @@
 
 - [BOJ I/O 처리](BOJ)
 - [SWEA I/O 처리](SWEA)
-- Softeer I/O 처리
