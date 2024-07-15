@@ -971,4 +971,50 @@
 
   - [답] 9981 and 2795.10
 
-- 문제19. 
+- 문제19. 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```c
+  #include <stdio.h>
+  
+  int isUpper(char *str);  // 대문자 처리
+  int isLower(char *str);  // 소문자 처리
+  int isNum(char *str);    // 숫자 처리
+  
+  char str[] = "It is 8";
+  
+  int main() {
+      int i = 0;
+      while (str[i] != '\0') {
+          char ch = str[i];
+          if (ch >= 'A' && ch <= 'Z') {
+              isUpper(&str[i]);
+          }
+          else if (ch >= 'a' && ch <= 'z') {
+              isLower(&str[i]);
+          }
+          else if (ch >= '0' && ch <= '9') {
+              isNum(&str[i]);
+          }
+          i++;
+      }
+      printf("%s\n", str);
+      return 0;
+  }
+  
+  int isUpper(char *str) {
+      *str = (*str - 'A' + 5) % 26 + 'A';  // 대문자 5글자 뒤로
+      return 0;
+  }
+  
+  int isLower(char *str) {
+      *str = (*str - 'a' + 10) % 26 + 'a';  // 소문자 10글자 뒤로
+      return 0;
+  }
+  
+  int isNum(char *str) {
+      *str = (*str - '0' + 3) % 10 + '0';  // 숫자 3 증가
+      return 0;
+  }
+  ```
+
+  - [답] Nd sc 1
