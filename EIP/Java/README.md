@@ -836,3 +836,55 @@
   - [답] 2
 
 
+
+#### 2024년 1회 [3개 출제]
+
+- 문제1. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  class Connection {
+  
+      private static Connection _inst = null;
+      private int count = 0;
+  
+      public static Connection get() {
+          if (_inst == null) {
+              _inst = new Connection();
+          }
+          return _inst;
+      }
+  
+      public void count() {
+          count++;
+      }
+  
+      public int getCount() {
+          return count;
+      }
+  }
+  
+  public class Main {
+  
+      public static void main(String[] args) {
+  
+          Connection conn1 = Connection.get();
+          conn1.count();
+  
+          Connection conn2 = Connection.get();
+          conn2.count();
+  
+          Connection conn3 = Connection.get();
+          conn3.count();
+  
+          conn1.count();
+  
+          System.out.print(conn1.getCount());
+      }
+  }
+  ```
+
+  - [답] 4
+
+- 문제10. 
+
+- 문제16. 
