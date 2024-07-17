@@ -885,6 +885,41 @@
 
   - [답] 4
 
-- 문제10. 
+- 문제10. 다음 Java 로 구현된 프로그램의 실행 순서를 중복없는 번호로 작성하시오.
+
+  > 실행 시작 코드는 5 이다
+
+  ```java
+  class Parent {
+  	int x, y;
+  	Parent(int x, int y) {  // [1]
+  		this.x = x;
+  		this.y = y;
+  	}
+  	int getArea() {  // [2]
+  		return x * y;
+  	}
+  }
+  
+  class Child extends Parent {
+  	int x;
+  	Child(int x) {  // [3]
+  		super(x+1, x); 
+          this.x=x;
+  	}
+  	int getArea(int x) {  // [4]
+  		return super.getArea()+x;
+  	}
+  }
+  
+  public class Main {  
+  	public static void main(String[] args) {  // [5]
+  		Parent parent = new Child(10);  // [6]
+  		System.out.println(parent.getArea());  // [7]
+  	}
+  }
+  ```
+
+  - [답] 6 3 1 7 2
 
 - 문제16. 
