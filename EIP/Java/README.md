@@ -922,4 +922,41 @@
 
   - [답] 6 3 1 7 2
 
-- 문제16. 
+- 문제16. 다음 Java 로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오)
+
+  ```java
+  class classOne {
+      int a, b;
+  
+      public classOne(int a, int b) {
+          this.a = a;
+          this.b = b;
+      }
+  
+      public int getP() {
+          return a + b;
+      }
+  }
+  
+  class classTwo extends classOne {
+      int po = 3;
+  
+      public classTwo(int i) {
+          super(i, i + 1);
+      }
+  
+      @Override
+      public int getP() {
+          return po * po;
+      }
+  }
+  
+  public class main {
+      public static void main(String[] args) {
+          classOne a = new classTwo(10);
+          System.out.println(a.getP());
+      }
+  }
+  ```
+
+  - [답] 9
