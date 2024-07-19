@@ -187,3 +187,21 @@
   ```
 
   - [답] split
+
+
+
+#### 2024년 1회 [1개 출제]
+
+- 문제12.  다음 Python으로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단 출력문의 출력 서식을 준수하시오)
+
+  ```python
+  a = ["Seoul", "Kyeonggi", "Incheon", "Daejun", "Daegu", "Pusan"] 
+  str01 = "S"
+   
+  for i in a:
+      str01 = str01 + i[1]
+   
+  print(str01)
+  ```
+
+  - [답] Seynaau
